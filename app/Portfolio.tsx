@@ -13,6 +13,7 @@ import {
   ArrowDownToLine,
   Sun,
   Moon,
+  Twitter,
 } from "lucide-react";
 import HyperText from "../components/ui/hyper-text";
 import Image from "next/image";
@@ -226,7 +227,7 @@ export default function Portfolio() {
               {skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className={`${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'} rounded-md p-3 shadow-md flex items-center space-x-2 transition duration-300`}
+                  className={`${darkMode ? 'bg-white border-spacing-3' : 'bg-white hover:bg-gray-50 shadow-sm'} rounded-md p-3 shadow-md flex items-center space-x-2 transition duration-300`}
                 >
                   <Image
                     src={skill.image}
@@ -234,7 +235,7 @@ export default function Portfolio() {
                     width={40}
                     height={40}
                   />
-                  <span className={`text-sm ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>{skill.name}</span>
+                  <span className={`text-sm ${darkMode ? 'text-black ' : 'text-black'}`}>{skill.name}</span>
                 </div>
               ))}
             </div>
@@ -406,6 +407,17 @@ export default function Portfolio() {
                   className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'} hover:underline`}
                 >
                   aftab__shaikh__777
+                </a>
+              </p>
+              <p className="flex items-center">
+              <Twitter className="mr-2" size={20} />
+                <a
+                  href="https://x.com/AftabSh26849541"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'} hover:underline`}
+                >
+                  Aftab Shaikh
                 </a>
               </p>
             </div>

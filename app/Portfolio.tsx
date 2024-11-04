@@ -74,7 +74,7 @@ export default function Portfolio() {
               )}
               <li>
                 <a href="/_Aftab_Shaikh_Resume.pdf" target="_blank">
-                  <p className=" flex gap-1 bg-black text-white p-2 rounded hover:bg-slate-400">
+                  <p className=" flex gap-1 bg-black text-white p-2 rounded hover:bg-slate-400 trins">
                     <ArrowDownToLine className="mr-2" />
                     Resume
                   </p>
@@ -148,8 +148,7 @@ export default function Portfolio() {
                   "Backend powered by Appwrite for managing users and storing data",
                 ]}
                 technologies={["React.js", "Appwrite", "TanStack Query"]}
-                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP"
-              />
+                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP" demoLink={undefined}              />
               <ProjectCard
                 title="Event Broker (Event Management System)"
                 description="Our Event Management Platform is a web application built using React, Firebase, NodeJS, Express, and Material UI. The development process was streamlined with the help of AI tools such as V0 and Claude."
@@ -179,8 +178,7 @@ export default function Portfolio() {
                   "Admin functionalities (updating customer, reviewing orders)",
                 ]}
                 technologies={["MongoDB", "Express", "React.js", "Node.js"]}
-                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP"
-              />
+                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP" demoLink={undefined}              />
             </div>
           </section>
 
@@ -382,13 +380,27 @@ export default function Portfolio() {
   );
 }
 
-function Skill({ icon, text }) {
+interface SkillProps {
+  icon: string;
+  text: string;
+}
+
+function Skill({ icon, text }: SkillProps) {
   return (
     <div className=" flex items-center bg-white rounded-full px-3 py-1 shadow-md gap-1">
       <img src={icon} alt="icon" className="h-5 w-5" />
       <span className="text-xs font-medium text-gray-700">{text}</span>
     </div>
   );
+}
+
+interface ProjectProps {
+  title: string,
+  description: string,
+  features: string[],
+  technologies: string[],
+  githubLink: string,
+  demoLink: string,
 }
 
 function ProjectCard({
@@ -398,7 +410,7 @@ function ProjectCard({
   technologies,
   githubLink,
   demoLink,
-}) {
+}: ProjectProps) {
   return (
     <div className="bg-white rounded-lg shadow-md p-4 md:p-6 hover:shadow-slate-700 transition duration-300">
       <h3 className="text-xl md:text-2xl font-semibold mb-2">{title}</h3>
@@ -453,7 +465,15 @@ function ProjectCard({
   );
 }
 
-function EducationCard({ degree, institution, duration, score, image }) {
+interface EducationProps {
+  degree: string;
+  institution: string;
+  duration: string;
+  score: string;
+  image: string;
+}
+
+function EducationCard({ degree, institution, duration, score, image }: EducationProps) {
   return (
     <div className="bg-white rounded-lg shadow-md p-4 md:p-6 hover:shadow-slate-700 transition duration-300">
       <div className="flex items-center mb-2">

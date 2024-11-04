@@ -148,7 +148,7 @@ export default function Portfolio() {
                   "Backend powered by Appwrite for managing users and storing data",
                 ]}
                 technologies={["React.js", "Appwrite", "TanStack Query"]}
-                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP" demoLink={undefined}              />
+                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP" demoLink={""}              />
               <ProjectCard
                 title="Event Broker (Event Management System)"
                 description="Our Event Management Platform is a web application built using React, Firebase, NodeJS, Express, and Material UI. The development process was streamlined with the help of AI tools such as V0 and Claude."
@@ -178,7 +178,7 @@ export default function Portfolio() {
                   "Admin functionalities (updating customer, reviewing orders)",
                 ]}
                 technologies={["MongoDB", "Express", "React.js", "Node.js"]}
-                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP" demoLink={undefined}              />
+                githubLink="https://github.com/AFTABSHIAKH786/PetsProducts-MERN-APP" demoLink={""}              />
             </div>
           </section>
 

@@ -15,7 +15,6 @@ import HyperText from "../components/ui/hyper-text";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "../components/ui/animated-grid-pattern";
-import { Button } from "@/components/ui/button";
 
 export default function Portfolio() {
   const skills = [
@@ -75,10 +74,10 @@ export default function Portfolio() {
               )}
               <li>
                 <a href="/_Aftab_Shaikh_Resume.pdf" target="_blank">
-                  <Button className="px-2 py-1 md:px-3 md:py-2">
+                  <p className=" flex gap-1 bg-black text-white p-2 rounded hover:bg-slate-400">
                     <ArrowDownToLine className="mr-2" />
                     Resume
-                  </Button>
+                  </p>
                 </a>
               </li>
             </ul>
@@ -385,7 +384,7 @@ export default function Portfolio() {
 
 function Skill({ icon, text }) {
   return (
-    <div className="flex items-center bg-white rounded-full px-3 py-1 shadow-md gap-1">
+    <div className=" flex items-center bg-white rounded-full px-3 py-1 shadow-md gap-1">
       <img src={icon} alt="icon" className="h-5 w-5" />
       <span className="text-xs font-medium text-gray-700">{text}</span>
     </div>

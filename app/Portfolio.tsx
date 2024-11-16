@@ -69,7 +69,7 @@ export default function Portfolio() {
     <div
       className={`min-h-screen ${
         darkMode ? "dark bg-gray-900" : "bg-gray-100"
-      } transition-colors duration-300 relative overflow-hidden`}
+      } transition-colors duration-300 relative `}
     >
       <AnimatedGridPattern
         numSquares={100}

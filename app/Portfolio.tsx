@@ -800,58 +800,6 @@ function ProjectCard({
   );
 }
 
-interface EducationProps {
-  degree: string;
-  institution: string;
-  duration: string;
-  score: string;
-  image: string;
-  darkMode: boolean;
-}
 
-function EducationCard({
-  degree,
-  institution,
-  duration,
-  score,
-  image,
-  darkMode,
-}: EducationProps) {
-  return (
-    <div
-      className={`${
-        darkMode ? "bg-gray-800 text-gray-200" : "bg-white text-gray-700"
-      } rounded-lg shadow-md p-4 md:p-6 hover:shadow-lg transition duration-300`}
-    >
-      <div className="flex items-center mb-2">
-        <Image
-          src={image}
-          alt="institution logo"
-          width={40}
-          height={40}
-          className="mr-3"
-        />
-        <h3
-          className={`text-lg md:text-xl font-semibold ${
-            darkMode ? "text-white" : "text-gray-900"
-          }`}
-        >
-          {degree}
-        </h3>
-      </div>
-      <p
-        className={`${
-          darkMode ? "text-gray-300" : "text-gray-600"
-        } text-sm md:text-base`}
-      >
-        {institution}
-      </p>
-      <p className={`${darkMode ? "text-gray-400" : "text-gray-500"} text-sm`}>
-        {duration}
-      </p>
-      <p className={`${darkMode ? "text-gray-400" : "text-gray-500"} text-sm`}>
-        {score}
-      </p>
-    </div>
-  );
-}
+
+

@@ -552,7 +552,7 @@ export default function Portfolio() {
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div

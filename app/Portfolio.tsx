@@ -170,7 +170,6 @@ export default function Portfolio() {
           </section>
 
           <section id="about" className="mb-16 text-center">
-            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -333,263 +332,327 @@ export default function Portfolio() {
               ))}
             </div>
           </section>
+        </main>
 
+        <div
+          style={{
+            maxWidth: 1280,
+            margin: "0 auto",
+            padding: "2rem",
+            textAlign: "center",
+          }}
+        >
           <section id="education" className="mb-16">
             <h2
-              className={`text-3xl font-bold mb-6 ${
+              className={`text-3xl font-bold mb-8 ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Education
+              Education Journey
             </h2>
-            <div className="space-y-6">
-              <EducationCard
-                image="/vnsgu.png"
-                degree="Master's in Computer Application (MSc. CA)"
-                institution="Veer Narmad South Gujarat University (DUIAS), Surat"
-                duration="July 2023 - April 2025"
-                score="FY score 8.3 CGPA"
-                darkMode={darkMode}
-              />
-              <EducationCard
-                image="/vnsgu.png"
-                degree="Bachelors in Computer Application (BCA)"
-                institution="Veer Narmad South Gujarat University (DUIAS), Surat"
-                duration="October 2020 - April 2023"
-                score="8.5 CGPA"
-                darkMode={darkMode}
-              />
-              <EducationCard
-                image="/gseb.jpeg"
-                degree="HSC (Science Stream)"
-                institution="Gujarat Secondary Board of Education (GSEB)"
-                duration="March 2020"
-                score="6 CGPA"
-                darkMode={darkMode}
-              />
-              <EducationCard
-                image="/gseb.jpeg"
-                degree="SSC"
-                institution="Gujarat Secondary Board of Education (GSEB)"
-                duration="March 2018"
-                score="6.5 CGPA"
-                darkMode={darkMode}
-              />
+            <div className="relative">
+              <div className="absolute left-4 top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-700"></div>
+              <div className="space-y-8">
+                {[
+                  {
+                    image: "/vnsgu.png",
+                    degree: "Master's in Computer Application (MSc. CA)",
+                    institution:
+                      "Veer Narmad South Gujarat University (DUIAS), Surat",
+                    duration: "July 2023 - April 2025",
+                    score: "FY score 8.3 CGPA",
+                    status: "Current",
+                  },
+                  {
+                    image: "/vnsgu.png",
+                    degree: "Bachelors in Computer Application (BCA)",
+                    institution:
+                      "Veer Narmad South Gujarat University (DUIAS), Surat",
+                    duration: "October 2020 - April 2023",
+                    score: "8.5 CGPA",
+                  },
+                  {
+                    image: "/gseb.jpeg",
+                    degree: "HSC (Science Stream)",
+                    institution: "Gujarat Secondary Board of Education (GSEB)",
+                    duration: "March 2020",
+                    score: "6 CGPA",
+                  },
+                  {
+                    image: "/gseb.jpeg",
+                    degree: "SSC",
+                    institution: "Gujarat Secondary Board of Education (GSEB)",
+                    duration: "March 2018",
+                    score: "6.5 CGPA",
+                  },
+                ].map((edu, index) => (
+                  <div key={index} className="relative pl-10">
+                    <div
+                      className={`absolute left-2 top-5 w-5 h-5 rounded-full ${
+                        darkMode ? "bg-blue-500" : "bg-blue-600"
+                      } transform -translate-x-1/2`}
+                    ></div>
+                    <div
+                      className={`${
+                        darkMode ? "bg-gray-800" : "bg-white"
+                      } rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl`}
+                    >
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center space-x-4">
+                          <Image
+                            src={edu.image}
+                            alt="institution logo"
+                            width={48}
+                            height={48}
+                            className="rounded-lg"
+                          />
+                          <div>
+                            <h3
+                              className={`text-xl font-bold ${
+                                darkMode ? "text-white" : "text-gray-900"
+                              }`}
+                            >
+                              {edu.degree}
+                              {edu.status && (
+                                <span className="ml-2 px-2 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
+                                  {edu.status}
+                                </span>
+                              )}
+                            </h3>
+                            <p
+                              className={`text-sm ${
+                                darkMode ? "text-gray-300" : "text-gray-600"
+                              }`}
+                            >
+                              {edu.institution}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center mt-2">
+                        <span
+                          className={`text-sm ${
+                            darkMode ? "text-gray-400" : "text-gray-500"
+                          }`}
+                        >
+                          {edu.duration}
+                        </span>
+                        <span
+                          className={`px-3 py-1 rounded-full ${
+                            darkMode
+                              ? "bg-gray-700 text-blue-400"
+                              : "bg-blue-100 text-blue-800"
+                          } text-sm font-medium`}
+                        >
+                          {edu.score}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
           <section id="certifications" className="mb-16">
             <h2
-              className={`text-3xl font-bold mb-6 ${
+              className={`text-3xl font-bold mb-8 ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Extra Certifications
+              Professional Certifications
             </h2>
-            <ul
-              className={`list-disc list-inside space-y-2 ${
-                darkMode ? "text-gray-200" : "text-gray-700"
-              }`}
-            >
-              <li>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Python",
+                  icon: "🐍",
+                  url: "https://drive.google.com/file/d/1ZC1knyoM4CbuvwZsoYHvqWC1jung3r4k/view",
+                  color: "bg-green-500",
+                },
+                {
+                  title: "MERN Stack",
+                  icon: "⚛️",
+                  url: "https://drive.google.com/file/d/1zQZ6G9E5IGZiPmzdOWo-eFVlGvNOI37r/view",
+                  color: "bg-blue-500",
+                },
+                {
+                  title: "Full Stack Web Development",
+                  icon: "🌐",
+                  url: "https://drive.google.com/file/d/1ddIdNaADx42Sl2d4Z16xSFWM8-ka8l0u/view",
+                  color: "bg-purple-500",
+                },
+                {
+                  title: "Block Chain Technology",
+                  icon: "⛓️",
+                  url: "https://drive.google.com/file/d/1Bc-1ULprzCOR1cU-uNDxchF7Zm2logIW/view",
+                  color: "bg-yellow-500",
+                },
+                {
+                  title: "Data Analytics",
+                  icon: "📊",
+                  url: "https://drive.google.com/file/d/12ztEYrxyMCnfqyu2x1kQUaoJdRzc_F1G/view",
+                  color: "bg-red-500",
+                },
+                {
+                  title: "Digital Marketing",
+                  icon: "📱",
+                  url: "https://drive.google.com/file/d/101OuPZgvPwvJHtEP0zQxD1G_LbQ64Vhi/view",
+                  color: "bg-indigo-500",
+                },
+                {
+                  title: "Leadership and Strategy",
+                  icon: "👥",
+                  url: "https://drive.google.com/file/d/1Gf4zksNJSAr577Age6Qwk-ZNHwXZGATv/view",
+                  color: "bg-teal-500",
+                },
+              ].map((cert, index) => (
                 <a
-                  href="https://drive.google.com/file/d/1ZC1knyoM4CbuvwZsoYHvqWC1jung3r4k/view"
+                  key={index}
+                  href={cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${
                     darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
+                      ? "bg-gray-800 hover:bg-gray-700"
+                      : "bg-white hover:bg-gray-50"
+                  } rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl group`}
                 >
-                  Python
+                  <div className="flex items-center space-x-4">
+                    <div
+                      className={`${cert.color} w-12 h-12 rounded-lg flex items-center justify-center text-2xl`}
+                    >
+                      {cert.icon}
+                    </div>
+                    <div>
+                      <h3
+                        className={`text-lg font-semibold ${
+                          darkMode ? "text-white" : "text-gray-900"
+                        } group-hover:text-blue-500 transition-colors duration-300`}
+                      >
+                        {cert.title}
+                      </h3>
+                      <p
+                        className={`text-sm ${
+                          darkMode ? "text-gray-400" : "text-gray-500"
+                        }`}
+                      >
+                        View Certificate →
+                      </p>
+                    </div>
+                  </div>
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/1zQZ6G9E5IGZiPmzdOWo-eFVlGvNOI37r/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  MERN Stack
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/1ddIdNaADx42Sl2d4Z16xSFWM8-ka8l0u/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  Full Stack Web Development
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/1Bc-1ULprzCOR1cU-uNDxchF7Zm2logIW/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  Block Chain Technology
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/12ztEYrxyMCnfqyu2x1kQUaoJdRzc_F1G/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  Data Analytics
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/101OuPZgvPwvJHtEP0zQxD1G_LbQ64Vhi/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  Digital Marketing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/1Gf4zksNJSAr577Age6Qwk-ZNHwXZGATv/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  Leadership and Strategy
-                </a>
-              </li>
-            </ul>
+              ))}
+            </div>
           </section>
 
           <section id="contact" className="mb-16">
             <h2
-              className={`text-3xl font-bold mb-6 ${
+              className={`text-3xl font-bold mb-8 ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Contact
+              Let's Connect
             </h2>
-            <div
-              className={`space-y-4 ${
-                darkMode ? "text-gray-200" : "text-gray-700"
-              }`}
-            >
-              <p className="flex items-center">
-                <Mail className="mr-2" size={20} />
-                <a
-                  href="mailto:aftabshaikh907860@gmail.com"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                className={`${
+                  darkMode ? "bg-gray-800" : "bg-white"
+                } rounded-lg shadow-lg p-6`}
+              >
+                <h3
+                  className={`text-xl font-semibold mb-4 ${
+                    darkMode ? "text-white" : "text-gray-900"
+                  }`}
                 >
-                  aftabshaikh907860@gmail.com
-                </a>
-              </p>
-              <p className="flex items-center">
-                <Phone className="mr-2" size={20} />
-                +91 7383656326
-              </p>
-              <p className="flex items-center">
-                <MapPin className="mr-2" size={20} />
-                21/24 B, Sudhanagar, Valsad, Gujarat
-              </p>
-              <p className="flex items-center">
-                <Linkedin className="mr-2" size={20} />
-                <a
-                  href="https://www.linkedin.com/in/aftab-shaikh-327a2b21b/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
+                  Contact Information
+                </h3>
+                <div className="space-y-4">
+                  <a
+                    href="mailto:aftabshaikh907860@gmail.com"
+                    className={`flex items-center space-x-3 ${
+                      darkMode
+                        ? "text-gray-300 hover:text-blue-400"
+                        : "text-gray-600 hover:text-blue-600"
+                    } transition-colors duration-300`}
+                  >
+                    <Mail className="flex-shrink-0" size={20} />
+                    <span>aftabshaikh907860@gmail.com</span>
+                  </a>
+                  <div
+                    className={`flex items-center space-x-3 ${
+                      darkMode ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
+                    <Phone className="flex-shrink-0" size={20} />
+                    <span>+91 7383656326</span>
+                  </div>
+                  <div
+                    className={`flex items-center space-x-3 ${
+                      darkMode ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
+                    <MapPin className="flex-shrink-0" size={20} />
+                    <span>21/24 B, Sudhanagar, Valsad, Gujarat</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={`${
+                  darkMode ? "bg-gray-800" : "bg-white"
+                } rounded-lg shadow-lg p-6`}
+              >
+                <h3
+                  className={`text-xl font-semibold mb-4 ${
+                    darkMode ? "text-white" : "text-gray-900"
+                  }`}
                 >
-                  Aftab Shaikh
-                </a>
-              </p>
-              <p className="flex items-center">
-                <Github className="mr-2" size={20} />
-                <a
-                  href="https://github.com/AFTABSHIAKH786"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  AFTABSHIAKH786
-                </a>
-              </p>
-              <p className="flex items-center">
-                <Instagram className="mr-2" size={20} />
-                <a
-                  href="https://www.instagram.com/aftab__shaikh__777/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  aftab__shaikh__777
-                </a>
-              </p>
-              <p className="flex items-center">
-                <Twitter className="mr-2" size={20} />
-                <a
-                  href="https://x.com/AftabSh26849541"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "text-blue-400 hover:text-blue-300"
-                      : "text-blue-600 hover:text-blue-800"
-                  } hover:underline`}
-                >
-                  Aftab Shaikh
-                </a>
-              </p>
+                  Social Links
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    {
+                      icon: Linkedin,
+                      label: "LinkedIn",
+                      url: "https://www.linkedin.com/in/aftab-shaikh-327a2b21b/",
+                    },
+                    {
+                      icon: Github,
+                      label: "GitHub",
+                      url: "https://github.com/AFTABSHIAKH786",
+                    },
+                    {
+                      icon: Instagram,
+                      label: "Instagram",
+                      url: "https://www.instagram.com/aftab__shaikh__777/",
+                    },
+                    {
+                      icon: Twitter,
+                      label: "Twitter",
+                      url: "https://x.com/AftabSh26849541",
+                    },
+                  ].map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center space-x-2 ${
+                        darkMode
+                          ? "text-gray-300 hover:text-blue-400"
+                          : "text-gray-600 hover:text-blue-600"
+                      } transition-colors duration-300`}
+                    >
+                      <social.icon className="flex-shrink-0" size={20} />
+                      <span>{social.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
-        </main>
+        </div>
 
         <footer
           className={`${

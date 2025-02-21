@@ -425,7 +425,8 @@ export default function Portfolio() {
                               }`}
                             >
                               {edu.institution}
-                            </p>
+                            </p>   
+                            
                           </div>
                         </div>
                       </div>

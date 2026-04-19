@@ -7,7 +7,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  SquareArrowOutUpRight,
   Linkedin,
   Instagram,
   ArrowDownToLine,
@@ -15,7 +14,6 @@ import {
   Moon,
   Twitter,
 } from "lucide-react";
-import HyperText from "../components/ui/hyper-text";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "../components/ui/animated-grid-pattern";
@@ -350,7 +348,18 @@ export default function Portfolio() {
                   duration: "March 2018",
                   score: "6.5 CGPA",
                 },
-              ].map((edu, index) => (
+              ].map(
+                (
+                  edu: {
+                    image: string;
+                    degree: string;
+                    institution: string;
+                    duration: string;
+                    score: string;
+                    status?: string;
+                  },
+                  index
+                ) => (
                 <div
                   key={index}
                   className={`${

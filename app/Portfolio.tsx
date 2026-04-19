@@ -236,44 +236,56 @@ export default function Portfolio() {
               Work Experience
             </h2>
             <div className="space-y-8 rounded">
-              <ExperienceCard
-                role="DevOps Engineer"
+              <CompanyExperienceCard
                 company="Ecosmob Technologies"
                 image="/ecosmob.png"
-                duration="Sep 2025 - Present"
-                description="Managed and scaled cloud infrastructure, streamlined deployments, and improved system reliability in a full-time capacity."
-                achievements={[
-                  "Optimized CI/CD pipelines, reducing deployment times significantly.",
-                  "Managed cloud resources to ensure high availability and cost efficiency.",
-                  "Collaborated with cross-functional teams to resolve infrastructure bottlenecks.",
+                overallDuration="11 mos"
+                type="Full-time"
+                location="On-site"
+                roles={[
+                  {
+                    title: "DevOps Engineer",
+                    duration: "Sep 2025 - Present · 8 mos",
+                    location: "Ahmedabad",
+                    description: "Managed and scaled cloud infrastructure, streamlined deployments, and improved system reliability in a full-time capacity.",
+                    achievements: [
+                      "Optimized CI/CD pipelines, reducing deployment times significantly.",
+                      "Managed cloud resources to ensure high availability and cost efficiency.",
+                      "Collaborated with cross-functional teams to resolve infrastructure bottlenecks.",
+                    ],
+                    technologies: ["AWS", "Docker", "Kubernetes", "Terraform", "Jenkins", "Linux"]
+                  },
+                  {
+                    title: "DevOps Trainee Engineer",
+                    duration: "Jun 2025 - Aug 2025 · 3 mos",
+                    location: "Ahmedabad, Gujarat, India",
+                    description: "Received hands-on training in DevOps methodologies, focusing on cloud provisioning, containerization, and automation.",
+                    achievements: [
+                      "Assisted in configuring automated deployment pipelines.",
+                      "Gained practical experience in managing Linux-based environments.",
+                    ],
+                    technologies: ["Linux", "Git", "Bash", "Docker"]
+                  }
                 ]}
-                technologies={["AWS", "Docker", "Kubernetes", "Terraform", "Jenkins", "Linux"]}
                 darkMode={darkMode}
               />
-              <ExperienceCard
-                role="DevOps Trainee"
-                company="Ecosmob Technologies"
-                image="/ecosmob.png"
-                duration="Jun 2025 - Aug 2025"
-                description="Received hands-on training in DevOps methodologies, focusing on cloud provisioning, containerization, and automation."
-                achievements={[
-                  "Assisted in configuring automated deployment pipelines.",
-                  "Gained practical experience in managing Linux-based environments.",
-                ]}
-                technologies={["Linux", "Git", "Bash", "Docker"]}
-                darkMode={darkMode}
-              />
-              <ExperienceCard
-                role="DevOps Intern"
-                company="1Rivet India"
+              <CompanyExperienceCard
+                company="1Rivet"
                 image="/1Rivet.jpg"
-                duration="Jan 2025 - May 2025"
-                description="Completed a comprehensive DevOps internship focused on modern cloud infrastructure and CI/CD practices."
-                achievements={[
-                  "Contributed to infrastructure automation and deployment workflows.",
-                  "Collaborated with the engineering team to optimize system reliability.",
+                type="Internship"
+                roles={[
+                  {
+                    title: "DevOps intern",
+                    duration: "Jan 2025 - May 2025 · 5 mos",
+                    location: "Valsad, Gujarat, India · On-site",
+                    description: "Completed a comprehensive DevOps internship focused on modern cloud infrastructure and CI/CD practices.",
+                    achievements: [
+                      "Contributed to infrastructure automation and deployment workflows.",
+                      "Collaborated with the engineering team to optimize system reliability.",
+                    ],
+                    technologies: ["Docker", "Linux", "Git", "Bash"]
+                  }
                 ]}
-                technologies={["Docker", "Linux", "Git", "Bash"]}
                 darkMode={darkMode}
               />
             </div>
@@ -423,32 +435,54 @@ export default function Portfolio() {
             >
               Professional Certifications
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="space-y-6">
               {[
-                { title: "Python", icon: "🐍", url: "https://drive.google.com/file/d/1ZC1knyoM4CbuvwZsoYHvqWC1jung3r4k/view" },
-                { title: "MERN Stack", icon: "⚛️", url: "https://drive.google.com/file/d/1zQZ6G9E5IGZiPmzdOWo-eFVlGvNOI37r/view" },
-                { title: "Full Stack Web", icon: "🌐", url: "https://drive.google.com/file/d/1ddIdNaADx42Sl2d4Z16xSFWM8-ka8l0u/view" },
-                { title: "Block Chain", icon: "⛓️", url: "https://drive.google.com/file/d/1Bc-1ULprzCOR1cU-uNDxchF7Zm2logIW/view" },
-                { title: "Data Analytics", icon: "📊", url: "https://drive.google.com/file/d/12ztEYrxyMCnfqyu2x1kQUaoJdRzc_F1G/view" },
-                { title: "Digital Marketing", icon: "📱", url: "https://drive.google.com/file/d/101OuPZgvPwvJHtEP0zQxD1G_LbQ64Vhi/view" },
-                { title: "Leadership", icon: "👥", url: "https://drive.google.com/file/d/1Gf4zksNJSAr577Age6Qwk-ZNHwXZGATv/view" },
+                {
+                  title: "AWS Educate Getting Started with Storage - Training Badge",
+                  issuer: "Amazon Web Services (AWS)",
+                  date: "Feb 2026",
+                  skills: "Amazon EBS, Amazon S3",
+                  icon: <FaAws className="w-8 h-8 text-[#FF9900]" />,
+                },
+                {
+                  title: "AWS Educate Introduction to Cloud 101",
+                  issuer: "Amazon Web Services (AWS)",
+                  date: "Feb 2026",
+                  skills: "Cloud Computing, Amazon Web Services (AWS)",
+                  icon: <FaAws className="w-8 h-8 text-[#FF9900]" />,
+                },
+                {
+                  title: "Online Kubernetes Lab for Beginners",
+                  issuer: "KodeKloud",
+                  date: "Jul 2025",
+                  credentialId: "3355e833-ac3f-4344-9061-766620158043",
+                  skills: "Kubernetes, Amazon EKS, +2 skills",
+                  icon: <SiKubernetes className="w-8 h-8 text-blue-500" />,
+                },
+                {
+                  title: "Devops & Cybersecurity internship",
+                  issuer: "1Rivet",
+                  date: "May 2025",
+                  image: "/1Rivet.jpg",
+                },
+                {
+                  title: "Web Development",
+                  issuer: "Udemy",
+                  date: "Apr 2024",
+                  credentialId: "UC-5fd98941-d5d8-4d4b-823e-0af335f779de",
+                },
               ].map((cert, index) => (
-                <a
+                <CertificationCard
                   key={index}
-                  href={cert.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    darkMode
-                      ? "bg-gray-800 border-spacing-3 text-white hover:bg-gray-700"
-                      : "bg-white hover:bg-gray-50 shadow-sm text-black"
-                  } rounded-md p-4 shadow-md flex flex-col items-center justify-center space-y-2 transition duration-300 text-center`}
-                >
-                  <span className="text-3xl mb-1">{cert.icon}</span>
-                  <span className={`text-sm font-medium`}>
-                    {cert.title}
-                  </span>
-                </a>
+                  title={cert.title}
+                  issuer={cert.issuer}
+                  date={cert.date}
+                  credentialId={cert.credentialId}
+                  skills={cert.skills}
+                  image={cert.image}
+                  icon={cert.icon}
+                  darkMode={darkMode}
+                />
               ))}
             </div>
           </section>
@@ -598,104 +632,241 @@ function Skill({ icon, text, darkMode }: SkillProps) {
   );
 }
 
-interface ExperienceProps {
-  role: string;
+interface Role {
+  title: string;
+  duration: string;
+  location?: string;
+  description?: string;
+  achievements?: string[];
+  technologies?: string[];
+}
+
+interface CompanyExperienceProps {
   company: string;
   image?: string;
-  duration: string;
-  description: string;
-  achievements: string[];
-  technologies: string[];
+  overallDuration?: string;
+  type?: string;
+  location?: string;
+  roles: Role[];
   darkMode: boolean;
 }
 
-function ExperienceCard({
-  role,
+function CompanyExperienceCard({
   company,
   image,
-  duration,
-  description,
-  achievements,
-  technologies,
+  overallDuration,
+  type,
+  location,
+  roles,
   darkMode,
-}: ExperienceProps) {
-  return (
-    <div
-      className={`${
-        darkMode ? "bg-gray-800 text-gray-200" : "bg-white text-gray-700"
-      } rounded-lg shadow-md p-4 md:p-6 hover:shadow-lg transition duration-300`}
-    >
-      <div className="flex flex-col md:flex-row justify-between mb-2">
-        <h3
-          className={`text-xl md:text-2xl font-semibold ${
-            darkMode ? "text-white" : "text-gray-900"
-          }`}
-        >
-          {role}
-        </h3>
-        <span className={`text-sm font-medium px-3 py-1 rounded-full ${
-          darkMode ? "bg-gray-700 text-blue-400" : "bg-blue-100 text-blue-800"
-        } w-fit mt-2 md:mt-0`}>
-          {duration}
-        </span>
-      </div>
-      <div className="flex items-center space-x-3 mb-4">
-        {image && (
-          <Image
-            src={image}
-            alt={`${company} logo`}
-            width={32}
-            height={32}
-            className="rounded-md object-cover"
-          />
-        )}
-        <h4 className={`text-lg font-medium ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-          {company}
-        </h4>
-      </div>
-      <p
-        className={`mb-4 text-sm md:text-base ${
-          darkMode ? "text-gray-300" : "text-gray-600"
-        }`}
-      >
-        {description}
-      </p>
-      {achievements.length > 0 && (
-        <div className="mb-4">
-          <h4
-            className={`font-semibold mb-2 text-sm md:text-base ${
-              darkMode ? "text-gray-200" : "text-gray-800"
-            }`}
-          >
-            Key Achievements:
-          </h4>
-          <ul className="list-disc list-inside text-sm space-y-1">
-            {achievements.map((achievement, index) => (
-              <li key={index}>{achievement}</li>
-            ))}
-          </ul>
+}: CompanyExperienceProps) {
+  if (roles.length === 1) {
+    const role = roles[0];
+    return (
+      <div className={`${darkMode ? "bg-gray-800 text-gray-200" : "bg-white text-gray-700"} rounded-lg shadow-md p-4 md:p-6 hover:shadow-lg transition duration-300`}>
+        <div className="flex gap-4">
+          {image && (
+            <div className="flex-shrink-0 mt-1">
+              <Image src={image} alt={`${company} logo`} width={48} height={48} className="rounded-md object-cover" />
+            </div>
+          )}
+          <div className="flex-1">
+            <h3 className={`text-xl md:text-2xl font-semibold ${darkMode ? "text-white" : "text-gray-900"}`}>
+              {role.title}
+            </h3>
+            <div className={`text-base font-medium mb-1 ${darkMode ? "text-gray-300" : "text-gray-800"}`}>
+              {company}{type && ` · ${type}`}
+            </div>
+            <div className={`text-sm mb-1 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+              {role.duration}
+            </div>
+            {role.location && (
+              <div className={`text-sm mb-3 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+                {role.location}
+              </div>
+            )}
+            
+            {role.description && (
+              <p className={`mb-4 text-sm md:text-base ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+                {role.description}
+              </p>
+            )}
+            {role.achievements && role.achievements.length > 0 && (
+              <div className="mb-4">
+                <ul className="list-disc list-inside text-sm space-y-1">
+                  {role.achievements.map((achievement, index) => (
+                    <li key={index}>{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {role.technologies && role.technologies.length > 0 && (
+              <div className="mt-4">
+                <div className="flex flex-wrap gap-2">
+                  {role.technologies.map((tech) => (
+                    <span key={tech} className={`${darkMode ? "bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"} px-2 py-1 rounded-md text-xs md:text-sm`}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      )}
-      <div className="mt-4">
-        <div className="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <span
-              key={tech}
-              className={`${
-                darkMode
-                  ? "bg-gray-700 text-gray-200"
-                  : "bg-gray-200 text-gray-700"
-              } px-2 py-1 rounded-md text-xs md:text-sm`}
-            >
-              {tech}
-            </span>
-          ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className={`${darkMode ? "bg-gray-800 text-gray-200" : "bg-white text-gray-700"} rounded-lg shadow-md p-4 md:p-6 hover:shadow-lg transition duration-300`}>
+      <div className="flex gap-4">
+        {image && (
+          <div className="flex-shrink-0 mt-1">
+            <Image src={image} alt={`${company} logo`} width={48} height={48} className="rounded-md object-cover" />
+          </div>
+        )}
+        <div className="flex-1">
+          <h3 className={`text-xl md:text-2xl font-semibold ${darkMode ? "text-white" : "text-gray-900"}`}>
+            {company}
+          </h3>
+          {(overallDuration || type) && (
+            <div className={`text-sm mb-1 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+              {type && `${type} · `}{overallDuration}
+            </div>
+          )}
+          {location && (
+            <div className={`text-sm mb-4 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+              {location}
+            </div>
+          )}
+          
+          <div className="mt-4 flex flex-col gap-0">
+            {roles.map((role, idx) => (
+              <div key={idx} className="relative flex gap-4">
+                <div className="flex flex-col items-center">
+                  <div className={`w-3 h-3 rounded-full mt-2 ${darkMode ? "bg-gray-500" : "bg-gray-400"}`}></div>
+                  {idx !== roles.length - 1 && (
+                    <div className={`w-0.5 h-full my-1 ${darkMode ? "bg-gray-700" : "bg-gray-200"}`}></div>
+                  )}
+                </div>
+                <div className="pb-6 flex-1">
+                  <h4 className={`text-lg font-semibold ${darkMode ? "text-white" : "text-gray-900"}`}>
+                    {role.title}
+                  </h4>
+                  <div className={`text-sm mb-1 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+                    {role.duration}
+                  </div>
+                  {role.location && (
+                    <div className={`text-sm mb-3 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+                      {role.location}
+                    </div>
+                  )}
+                  {role.description && (
+                    <p className={`mb-3 text-sm md:text-base ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      {role.description}
+                    </p>
+                  )}
+                  {role.achievements && role.achievements.length > 0 && (
+                    <div className="mb-4">
+                      <ul className="list-disc list-inside text-sm space-y-1">
+                        {role.achievements.map((achievement, index) => (
+                          <li key={index}>{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {role.technologies && role.technologies.length > 0 && (
+                    <div className="mt-2">
+                      <div className="flex flex-wrap gap-2">
+                        {role.technologies.map((tech) => (
+                          <span key={tech} className={`${darkMode ? "bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"} px-2 py-1 rounded-md text-xs md:text-sm`}>
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
+interface CertificationProps {
+  title: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+  skills?: string;
+  image?: string;
+  icon?: ReactNode;
+  darkMode: boolean;
+}
 
-
-
+function CertificationCard({
+  title,
+  issuer,
+  date,
+  credentialId,
+  skills,
+  image,
+  icon,
+  darkMode,
+}: CertificationProps) {
+  return (
+    <div
+      className={`${
+        darkMode ? "bg-gray-800 text-gray-200" : "bg-white text-gray-700"
+      } rounded-lg shadow-md p-4 md:p-6 hover:shadow-lg transition duration-300 flex flex-col sm:flex-row gap-4`}
+    >
+      <div className="flex-shrink-0">
+        {image ? (
+          <Image
+            src={image}
+            alt={`${issuer} logo`}
+            width={48}
+            height={48}
+            className="rounded-md object-cover"
+          />
+        ) : icon ? (
+          <div className={`w-12 h-12 flex items-center justify-center rounded-md ${darkMode ? "bg-gray-700" : "bg-gray-100"}`}>
+            {icon}
+          </div>
+        ) : (
+          <div className={`w-12 h-12 flex items-center justify-center rounded-md font-bold text-xl ${darkMode ? "bg-gray-700 text-gray-300" : "bg-gray-200 text-gray-700"}`}>
+            {issuer.charAt(0)}
+          </div>
+        )}
+      </div>
+      <div className="flex-1">
+        <h3
+          className={`text-lg font-semibold ${
+            darkMode ? "text-white" : "text-gray-900"
+          }`}
+        >
+          {title}
+        </h3>
+        <p className={`text-base font-medium mb-1 ${darkMode ? "text-gray-300" : "text-gray-800"}`}>
+          {issuer}
+        </p>
+        <p className={`text-sm mb-2 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+          Issued {date}
+        </p>
+        {credentialId && (
+          <p className={`text-sm mb-2 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+            Credential ID {credentialId}
+          </p>
+        )}
+        {skills && (
+          <p className={`text-sm mt-2 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+            <span className="font-semibold">Skills:</span> {skills}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
